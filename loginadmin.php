@@ -79,7 +79,7 @@ include 'koneksi2.php';
                         <div class="row no-gutters">
                             <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
                                 <div class="contact-wrap w-100 p-md-5 p-4" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #6b73ff, #000dff);">
-                                    <h3 class="mb-4 text-center" style="color: #fff; font-family: 'Nunito', sans-serif;">Halaman Login Admin</h3>
+                                    <h3 class="mb-4 text-center" style="color: #fff; font-family: 'Nunito', sans-serif;">Login Admin</h3>
                                     <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                         <div class="row">
                                             <div class="col-md-12">

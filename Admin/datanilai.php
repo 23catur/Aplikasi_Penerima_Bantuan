@@ -96,7 +96,7 @@
                       <th class="text-center">Nama</th>
                       <th class="text-center">Kelompok Tani</th>
                       <th class="text-center">Jenis Bantuan Yang Diajukan</th>
-                      <th class="text-center">Jenis Akomodasi</th>
+                      <th class="text-center">Komoditi</th>
                       <th class="text-center">A1</th>
                       <th class="text-center">A2</th>
                       <th class="text-center">A3</th>
@@ -115,7 +115,7 @@
                           <td><?php echo $pecah['ktp']; ?></td>
                           <td><?php echo $pecah['kelompok_tani']; ?></td>
                           <td><?php echo $pecah['jenis_bantuan']; ?></td>
-                          <td><?php echo $pecah['akomodasi']; ?></td>
+                          <td><?php echo $pecah['komoditi']; ?></td>
                           <td><?php echo $pecah['a1']; ?></td>
                           <td><?php echo $pecah['a2']; ?></td>
                           <td><?php echo $pecah['a3']; ?></td>

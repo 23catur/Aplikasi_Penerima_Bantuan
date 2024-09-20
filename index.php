@@ -21,7 +21,7 @@
           <p class="caps" style="font-size: 1.1em; margin-bottom: 20px; color: #fff;">Sistem Pendukung Keputusan Penerima Bantuan Alat dan Mesin Pertanian, solusi tepat guna mendukung produktivitas pertanian melalui evaluasi berbasis data yang transparan dan akurat.</p>
           <p class="mb-0">
             <a href="listdospem.php" class="btn btn-primary" style="margin-right: 10px;">List Bantuan ALSINTAN</a>
-            <?php if (!isset($_SESSION["id_mahasiswa"])) { ?>
+            <?php if (!isset($_SESSION["id_kelompok"])) { ?>
               <a href="#" class="btn btn-white" id="loginButton">Register</a>
             <?php } ?>
           </p>

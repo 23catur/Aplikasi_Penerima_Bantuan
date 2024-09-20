@@ -95,8 +95,8 @@ $pecah = $ambil->fetch_assoc();
                         <input type="text" class="form-control" name="jenis_bantuan" required value="<?php echo $pecah['jenis_bantuan']; ?>">
                       </div>
                       <div class="form-group">
-                        <label>Jenis Akomodasi</label>
-                        <input type="text" class="form-control" name="akomodasi" required value="<?php echo $pecah['akomodasi']; ?>">
+                        <label>Komoditi</label>
+                        <input type="text" class="form-control" name="komoditi" required value="<?php echo $pecah['komoditi']; ?>">
                       </div>
                       <div class="form-group">
                         <label>Terdaftar di SIMLUHTAN</label>
@@ -160,7 +160,7 @@ $pecah = $ambil->fetch_assoc();
                         $proposalFileName = basename($_FILES['proposal']['name']);
                         $koneksi->query("UPDATE nilai_kelompok 
                                         SET a1='$_POST[a1]', a2='$_POST[a2]', a3='$_POST[a3]', a4='$_POST[a4]', a5='$_POST[a5]', 
-                                        proposal='$proposalFileName', jenis_bantuan='$_POST[jenis_bantuan]', kelompok_tani='$_POST[kelompok_tani]', akomodasi='$_POST[akomodasi]', ktp='$_POST[ktp]' 
+                                        proposal='$proposalFileName', jenis_bantuan='$_POST[jenis_bantuan]', kelompok_tani='$_POST[kelompok_tani]', komoditi='$_POST[komoditi]', ktp='$_POST[ktp]' 
                                         WHERE id_nilai='$_GET[id]'");
 
                         echo "<script>alert('Data Nilai telah berhasil Diubah!');</script>";
@@ -172,7 +172,7 @@ $pecah = $ambil->fetch_assoc();
                   } else {
                     $koneksi->query("UPDATE nilai_kelompok 
                                 SET a1='$_POST[a1]', a2='$_POST[a2]', a3='$_POST[a3]', a4='$_POST[a4]', a5='$_POST[a5]', 
-                                jenis_bantuan='$_POST[jenis_bantuan]', kelompok_tani='$_POST[kelompok_tani]', akomodasi='$_POST[akomodasi]', ktp='$_POST[ktp]' 
+                                jenis_bantuan='$_POST[jenis_bantuan]', kelompok_tani='$_POST[kelompok_tani]', komoditi='$_POST[komoditi]', ktp='$_POST[ktp]' 
                                 WHERE id_nilai='$_GET[id]'");
 
                     echo "<script>alert('Data Nilai telah berhasil Diubah!');</script>";

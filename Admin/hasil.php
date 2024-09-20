@@ -109,16 +109,17 @@
                           <td><?php echo $pecah['kelompok_tani']; ?></td>
                           <td><?php echo $pecah['hasil']; ?></td>
                           <td>
-                            <?php if ($pecah['status'] == 'Terverifikasi') { ?>
-                              <button type="button" class="btn btn-success btn-round">Terima Bantuan</button>
-                            <?php } else { ?>
-                              <form method="POST" action="updatestatus_hasil.php">
-                                <input type="hidden" name="tanggal" value="<?php echo $pecah['tanggal']; ?>">
-                                <input type="hidden" name="status" value="Terverifikasi">
-                                <button type="submit" class="btn btn-warning btn-round" onclick="return confirmVerifikasi();">Belum Terima Bantuan</button>
-                              </form>
-                            <?php } ?>
-                          </td>
+  <?php if ($pecah['status'] == 'Terverifikasi') { ?>
+    <button type="button" class="btn btn-success btn-round">Terima Bantuan</button>
+  <?php } else { ?>
+    <form method="POST" action="updatestatus_hasil.php">
+      <input type="hidden" name="tanggal" value="<?php echo $pecah['tanggal']; ?>">
+      <input type="hidden" name="status" value="Terverifikasi">
+      <button type="submit" class="btn btn-warning btn-round" onclick="return confirmVerifikasi();">Belum Terima Bantuan</button>
+    </form>
+  <?php } ?>
+</td>
+
                         </tr>
                         <?php $nomor++; ?>
                       <?php } ?>

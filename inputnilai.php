@@ -60,8 +60,8 @@ if (isset($_GET['id'])) {
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label class="label" for="jenis_bantuan">Jenis Akomodasi</label>
-                                                    <input type="text" class="form-control" name="akomodasi" id="akomodasi" required placeholder="Akomodasi Yang Diusahakan">
+                                                    <label class="label" for="jenis_bantuan">Komoditi</label>
+                                                    <input type="text" class="form-control" name="komoditi" id="komoditi" required placeholder="Komoditi Yang Diusahakan">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
                                         } else {
                                             $ktp = $_POST['ktp'];
                                             $kelompok = $_POST['kelompok'];
-                                            $akomodasi = $_POST['akomodasi'];
+                                            $komoditi = $_POST['komoditi'];
                                             $jenis_bantuan = $_POST['jenis_bantuan'];
                                             $a1 = $_POST['a1'];
                                             $a6 = $_POST['a6'];
@@ -167,12 +167,12 @@ if (isset($_GET['id'])) {
                                             }
 
                                             if (move_uploaded_file($proposal_tmp, $proposal_folder)) {
-                                                $query = $koneksi->query("INSERT INTO nilai_kelompok(id_kelompok, ktp, kelompok_tani, akomodasi, jenis_bantuan, a1, a6, a3, a4, a5, a2, proposal) 
-                                                        VALUES('$id_kelompok', '$ktp', '$kelompok', '$akomodasi', '$jenis_bantuan', '$a1', '$a6', '$a3', '$a4', '$a5', 5, '$proposal')");
+                                                $query = $koneksi->query("INSERT INTO nilai_kelompok(id_kelompok, ktp, kelompok_tani, komoditi, jenis_bantuan, a1, a6, a3, a4, a5, a2, proposal, status) 
+                          VALUES('$id_kelompok', '$ktp', '$kelompok', '$komoditi', '$jenis_bantuan', '$a1', '$a6', '$a3', '$a4', '$a5', 5, '$proposal', 'belum verifikasi')");
 
                                                 if ($query) {
                                                     echo "<div class='alert alert-info'>Data Tersimpan</div>";
-                                                    echo "<meta http-equiv='refresh' content='1;url=listbantuan.php'>";
+                                                    echo "<meta http-equiv='refresh' content='1;url=nilai.php'>";
                                                 } else {
                                                     echo "<div class='alert alert-danger'>Gagal menyimpan data ke database.</div>";
                                                 }

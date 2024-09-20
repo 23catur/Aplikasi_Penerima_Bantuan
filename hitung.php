@@ -279,8 +279,9 @@ if (isset($_SESSION['user'])) {
                 if ($cek_hasil->num_rows == 0) {
                   date_default_timezone_set('Asia/Jakarta');
                   $tanggal = date("Y-m-d H:i");
-                  $koneksi->query("INSERT INTO hasilhitung(id_kelompok, hasil, tanggal) 
-                        VALUES('$id_kelompok', '$rank', '$tanggal')");
+                  $koneksi->query("INSERT INTO hasilhitung(id_kelompok, hasil, tanggal, status) 
+     VALUES('$id_kelompok', '$rank', '$tanggal', 'belum verifikasi')");
+
                 } else {
                   // echo "<div class='alert alert-info'>Data untuk id_kelompok ini sudah ada, tidak akan di-insert lagi.</div>";
                 }

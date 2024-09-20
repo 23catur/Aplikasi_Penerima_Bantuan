@@ -25,7 +25,7 @@ $koneksi = new mysqli("localhost", "root", "", "pertanian");
             <a href="index.php" class="nav-link" style="color: #06290E; font-weight: bold; font-size: 1.2em;">Home</a>
         </li>
         <li class="nav-item">
-            <a href="listbantuan.php" class="nav-link" style="color: #06290E; font-weight: bold; font-size: 1.2em;">List Bantuan ALSINTAN</a>
+            <a href="listbantuan.php" class="nav-link" style="color: #06290E; font-weight: bold; font-size: 1.2em;">ALSINTAN</a>
         </li>
 
         <?php if (isset($_SESSION['id_kelompok'])) { ?>
