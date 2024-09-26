@@ -20,17 +20,6 @@ if (isset($_GET['pesan'])) {
 }
 ?>
 
-<!-- 	
-	<section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg'); background-size: cover; background-position: center center;">
-    <div class="overlay" style="background: rgba(0, 0, 0, 0.6);"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text align-items-end justify-content-center">
-            <div class="col-md-9 ftco-animate pb-5 text-center">
-                <h1 class="mb-0 bread" style="color: #fff; font-family: 'Poppins', sans-serif;">Login User</h1>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 <section class="ftco-section" style="height: 100vh; display: flex; align-items: center; justify-content: center; background-image: url('images/latar.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
     <div class="container">
@@ -42,7 +31,7 @@ if (isset($_GET['pesan'])) {
                         <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
                             <div class="contact-wrap w-100 p-md-5 p-4" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); background: linear-gradient(135deg, #6b73ff, #000dff);">
                                 <h3 class="mb-4 text-center" style="color: #fff; font-family: 'Nunito', sans-serif;">Login User</h3>
-                                <form method="POST" action="loginuserProcess.php" id="contactForm" name="contactForm" class="contactForm">
+                                <form method="POST" action="loginuserProcess" id="contactForm" name="contactForm" class="contactForm">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">

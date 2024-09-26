@@ -4,7 +4,6 @@ $koneksi = new mysqli("localhost", "root", "", "pertanian");
 
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <!-- Mengatur warna latar belakang tulisan menjadi merah -->
         <a class="navbar-brand" href="index.php" style="background: green; color: white; padding: 0.5rem 1rem; border-radius: 5px;">
             <span>Pasti Tani</span>
         </a>
