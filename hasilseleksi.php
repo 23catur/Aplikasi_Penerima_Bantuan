@@ -137,7 +137,9 @@
 
                                 <h3>Status :<br>
                                     <?php
-                                    if ($status == 'Terverifikasi') {
+                                    if ($status == 'Sedang Diproses') {
+                                        echo '<span class="badge badge-default">Masih Dalam Proses!</span>';
+                                    } elseif ($status == 'Terverifikasi') {
                                         echo '<span class="badge badge-success">Selamat, Anda berhak menerima bantuan!</span>';
                                     } elseif ($status == 'Belum Verifikasi') {
                                         echo '<span class="badge badge-danger">Mohon maaf, Anda belum bisa menerima bantuan. Coba di lain waktu.</span>';

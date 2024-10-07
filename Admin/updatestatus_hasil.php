@@ -1,15 +1,20 @@
 <?php
 include 'koneksi2.php';
 
-if (isset($_POST['tanggal']) && isset($_POST['status'])) {
-  $tanggal = $_POST['tanggal'];
-  $status = $_POST['status'];
+$tanggal = $_GET['tanggal'];
+$status = $_GET['status'];
 
-  $query = "UPDATE hasilhitung SET status = '$status' WHERE tanggal = '$tanggal'";
+$koneksi->query("UPDATE hasilhitung SET status='$status' WHERE tanggal='$tanggal'");
 
-  if ($koneksi->query($query)) {
-    header("Location: hasil.php");
-  } else {
-    echo "Error: " . $koneksi->error;
-  }
+if ($status == 'Terverifikasi' || $status == 'Belum Verifikasi') {
+    $ambilData = $koneksi->query("SELECT * FROM hasilhitung WHERE tanggal='$tanggal'");
+    $data = $ambilData->fetch_assoc();
+
+    $koneksi->query("INSERT INTO riwayat (tanggal, id_kelompok, hasil, status) VALUES ('{$data['tanggal']}', '{$data['id_kelompok']}', '{$data['hasil']}', '$status')");
+
+    $koneksi->query("DELETE FROM hasilhitung WHERE tanggal='$tanggal'");
 }
+
+header('Location: hasil.php');
+exit;
+?>

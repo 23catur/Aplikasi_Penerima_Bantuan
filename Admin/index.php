@@ -51,6 +51,12 @@
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -194,9 +200,6 @@
               </div>
               <div class="card-footer ">
                 <hr>
-                <!-- <div class="stats">
-                  <i class="fa fa-history"></i> Updated 3 minutes ago
-                </div> -->
               </div>
             </div>
           </div>
@@ -208,7 +211,6 @@
   <?php include 'includes/script.php' ?>
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
     });
   </script>

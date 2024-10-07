@@ -51,6 +51,12 @@
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -149,7 +155,6 @@
                   </div>
                 </form>
 
-                <!-- database -->
                 <?php
                 if (isset($_POST['save'])) {
                   $koneksi->query("INSERT INTO nilai_mahasiswa(nama_mahasiswa, a1, a2, a3, a4, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11) 

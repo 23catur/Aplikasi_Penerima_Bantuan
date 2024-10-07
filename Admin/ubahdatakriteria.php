@@ -57,6 +57,12 @@ $pecah = $ambil->fetch_assoc();
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -99,7 +105,6 @@ $pecah = $ambil->fetch_assoc();
                   </div>
                 </form>
 
-                <!-- database -->
                 <?php
                 if (isset($_POST['ubah'])) {
                   $koneksi->query("UPDATE kriteria SET nama_kriteria='$_POST[nama_kriteria]',bobot_nilai='$_POST[bobot_nilai]' WHERE id_kriteria='$_GET[id]'");

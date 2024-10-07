@@ -51,6 +51,12 @@
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -114,7 +120,6 @@
                   </div>
                 </form>
 
-                <!-- database -->
                 <?php
                 if (isset($_POST['save'])) {
                   $nama = $_FILES['foto']['name'];

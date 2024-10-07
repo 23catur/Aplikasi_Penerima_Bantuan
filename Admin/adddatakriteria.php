@@ -51,6 +51,12 @@
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -94,21 +100,16 @@
                   </div>
                 </form>
 
-                <!-- database -->
                 <?php
                 if (isset($_POST['save'])) {
                   $koneksi->query("INSERT INTO kriteria(nama_kriteria, bobot_nilai) 
                         VALUES ('" . $_POST['nama_kriteria'] . "', '" . $_POST['bobot_nilai'] . "')");
 
-                  // Menampilkan pesan konfirmasi
                   echo "<div class='alert alert-info'>Data Tersimpan</div>";
 
-                  // Redirect otomatis setelah 1 detik
                   echo "<meta http-equiv='refresh' content='1;url=kriteria.php'>";
                 }
                 ?>
-
-
               </div>
             </div>
           </div>

@@ -57,6 +57,12 @@ $pecah = $ambil->fetch_assoc();
           <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
+              <p>Hasil Perhitungan</p>
+            </a>
+          </li>
+          <li>
+            <a href="./riwayat.php">
+              <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
             </a>
           </li>
@@ -135,7 +141,6 @@ $pecah = $ambil->fetch_assoc();
                   </div>
                 </form>
 
-                <!-- database -->
                 <?php
                 if (isset($_POST['ubah'])) {
                   if (isset($_FILES['proposal']) && $_FILES['proposal']['error'] == 0) {
@@ -143,11 +148,6 @@ $pecah = $ambil->fetch_assoc();
                     $targetFile = $targetDirectory . basename($_FILES['proposal']['name']);
                     $uploadOk = 1;
                     $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
-                    // if ($_FILES['proposal']['size'] > 2000000) {
-                    //     echo "Sorry, your file is too large.";
-                    //     $uploadOk = 0;
-                    // }
 
                     $allowedTypes = array('pdf');
                     if (!in_array($fileType, $allowedTypes)) {

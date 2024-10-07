@@ -47,13 +47,13 @@
               <p>Data Kelompok Tani</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="./hasil.php">
               <i class="nc-icon nc-box"></i>
               <p>Hasil Perhitungan</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./riwayat.php">
               <i class="nc-icon nc-box"></i>
               <p>Riwayat Perhitungan</p>
@@ -98,48 +98,30 @@
                       <?php
                       $nomor = 1;
                       $ambil = $koneksi->query("SELECT nilai_kelompok.ktp, hasilhitung.tanggal, nilai_kelompok.kelompok_tani, hasilhitung.hasil, hasilhitung.status 
-FROM nilai_kelompok
-JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
-WHERE hasilhitung.status = 'Sedang Diproses'
-GROUP BY hasilhitung.tanggal
-ORDER BY hasilhitung.hasil DESC");
+                            FROM nilai_kelompok
+                            JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
+                            ORDER BY hasilhitung.tanggal DESC");
 
                       if (!$ambil) {
-                        echo "Query Error: " . $koneksi->error;
-                      }
-
-                      while ($pecah = $ambil->fetch_assoc()) {
+                        echo "<tr><td colspan='6'>Query Error: " . $koneksi->error . "</td></tr>";
+                      } else {
+                        while ($pecah = $ambil->fetch_assoc()) {
+                          // Mengubah status berdasarkan kondisi
+                          $status = ($pecah['status'] == 'Terverifikasi') ? 'Terima Bantuan' : 'Tolak Bantuan';
                       ?>
-                        <tr>
-                          <td><?php echo $nomor; ?></td>
-                          <td><?php echo $pecah['tanggal']; ?></td>
-                          <td><?php echo $pecah['ktp']; ?></td>
-                          <td><?php echo $pecah['kelompok_tani']; ?></td>
-                          <td><?php echo $pecah['hasil']; ?></td>
-                          <td>
-                            <?php if ($pecah['status'] == "Sedang Diproses") { ?>
-                              <form method="GET" action="updatestatus_hasil.php" class="d-inline">
-                                <input type="hidden" name="tanggal" value="<?php echo $pecah['tanggal']; ?>">
-                                <input type="hidden" name="status" value="Terverifikasi">
-                                <button type="submit" class="btn btn-success btn-round" onclick="return confirmVerifikasi();">Terima Bantuan</button>
-                              </form>
-
-                              <form method="GET" action="updatestatus_hasil.php" class="d-inline">
-                                <input type="hidden" name="tanggal" value="<?php echo $pecah['tanggal']; ?>">
-                                <input type="hidden" name="status" value="Belum Verifikasi">
-                                <button type="submit" class="btn btn-danger btn-round" onclick="return confirmTolak();">Tolak Bantuan</button>
-                              </form>
-                            <?php } else if ($pecah['status'] == "Terverifikasi") { ?>
-                              <span class="text-success">Bantuan Diterima</span>
-                            <?php } else if ($pecah['status'] == "Belum Verifikasi") { ?>
-                              <span class="text-danger">Bantuan Ditolak</span>
-                            <?php } ?>
-                          </td>
-
-                        </tr>
+                          <tr>
+                            <td><?php echo $nomor; ?></td>
+                            <td><?php echo $pecah['tanggal']; ?></td>
+                            <td><?php echo $pecah['ktp']; ?></td>
+                            <td><?php echo $pecah['kelompok_tani']; ?></td>
+                            <td><?php echo $pecah['hasil']; ?></td>
+                            <td><?php echo $status; ?></td>
+                          </tr>
                       <?php $nomor++;
+                        }
                       } ?>
                     </tbody>
+
                   </table>
                 </div>
               </div>
@@ -153,14 +135,7 @@ ORDER BY hasilhitung.hasil DESC");
   <?php include 'includes/script.php' ?>
 
   <script>
-    function confirmVerifikasi() {
-      return confirm('Apakah Anda yakin ingin memverifikasi data ini?');
-    }
-
-    function confirmTolak() {
-      return confirm('Apakah Anda yakin ingin menolak bantuan ini?');
-    }
-
+    // Fungsi pencarian tabel
     function searchTable() {
       var input, filter, table, tr, td, i, txtValue;
       input = document.getElementById("searchInput");
