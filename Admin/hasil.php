@@ -98,12 +98,11 @@
                       <?php
                       $nomor = 1;
                       $ambil = $koneksi->query("SELECT nilai_kelompok.ktp, hasilhitung.tanggal, nilai_kelompok.kelompok_tani, hasilhitung.hasil, hasilhitung.status 
-FROM nilai_kelompok
-JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
-WHERE hasilhitung.status = 'Sedang Diproses'
-GROUP BY hasilhitung.tanggal
-ORDER BY hasilhitung.hasil DESC");
-
+                                                  FROM nilai_kelompok
+                                                  JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
+                                                  WHERE hasilhitung.status = 'Sedang Diproses'
+                                                  GROUP BY hasilhitung.tanggal
+                                                  ORDER BY hasilhitung.hasil DESC");
                       if (!$ambil) {
                         echo "Query Error: " . $koneksi->error;
                       }

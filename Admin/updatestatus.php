@@ -1,9 +1,9 @@
 <?php
 include 'koneksi2.php';
 
-if (isset($_POST['ktp']) && isset($_POST['status'])) {
-  $ktp = $_POST['ktp'];
-  $status = $_POST['status'];
+if (isset($_GET['ktp']) && isset($_GET['status'])) {
+  $ktp = $_GET['ktp'];
+  $status = $_GET['status'];
 
   $query = "UPDATE nilai_kelompok SET status = '$status' WHERE ktp = '$ktp'";
 
@@ -13,3 +13,4 @@ if (isset($_POST['ktp']) && isset($_POST['status'])) {
     echo "Error: " . $koneksi->error;
   }
 }
+ 

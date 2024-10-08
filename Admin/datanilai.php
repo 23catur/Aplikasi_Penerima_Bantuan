@@ -133,14 +133,14 @@
                             <?php if ($pecah['status'] == 'Terverifikasi') { ?>
                               <button type="button" class="btn btn-success btn-round">Terverifikasi</button>
                             <?php } else { ?>
-                              <form method="POST" action="updatestatus.php">
+                              <form method="GET" action="updatestatus.php">
                                 <input type="hidden" name="ktp" value="<?php echo $pecah['ktp']; ?>">
                                 <input type="hidden" name="status" value="Terverifikasi">
                                 <button type="submit" class="btn btn-warning btn-round" onclick="return confirmVerifikasi();">Belum Verifikasi</button>
                               </form>
                             <?php } ?>
                           </td>
-                        </tr>
+                        </tr> 
                         <?php $nomor++; ?>
                       <?php } ?>
                     </tbody>

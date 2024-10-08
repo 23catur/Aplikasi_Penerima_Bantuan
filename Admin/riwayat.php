@@ -98,15 +98,16 @@
                       <?php
                       $nomor = 1;
                       $ambil = $koneksi->query("SELECT nilai_kelompok.ktp, hasilhitung.tanggal, nilai_kelompok.kelompok_tani, hasilhitung.hasil, hasilhitung.status 
-                            FROM nilai_kelompok
-                            JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
-                            ORDER BY hasilhitung.tanggal DESC");
+                          FROM nilai_kelompok
+                          JOIN hasilhitung ON nilai_kelompok.id_kelompok = hasilhitung.id_kelompok
+                          WHERE hasilhitung.status != 'sedang diproses'
+                          ORDER BY hasilhitung.tanggal DESC");
+
 
                       if (!$ambil) {
                         echo "<tr><td colspan='6'>Query Error: " . $koneksi->error . "</td></tr>";
                       } else {
                         while ($pecah = $ambil->fetch_assoc()) {
-                          // Mengubah status berdasarkan kondisi
                           $status = ($pecah['status'] == 'Terverifikasi') ? 'Terima Bantuan' : 'Tolak Bantuan';
                       ?>
                           <tr>
