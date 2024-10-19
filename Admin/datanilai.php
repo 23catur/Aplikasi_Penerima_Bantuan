@@ -99,7 +99,7 @@
                   <table class="table" id="dataTable">
                     <thead class=" text-primary">
                       <th class="text-center">No</th>
-                      <th class="text-center">Nama</th>
+                      <!-- <th class="text-center">Nama</th> -->
                       <th class="text-center">Kelompok Tani</th>
                       <th class="text-center">Jenis Bantuan Yang Diajukan</th>
                       <th class="text-center">Komoditi</th>
@@ -118,7 +118,6 @@
                       <?php while ($pecah = $ambil->fetch_assoc()) { ?>
                         <tr>
                           <td><?php echo $nomor; ?></td>
-                          <td><?php echo $pecah['ktp']; ?></td>
                           <td><?php echo $pecah['kelompok_tani']; ?></td>
                           <td><?php echo $pecah['jenis_bantuan']; ?></td>
                           <td><?php echo $pecah['komoditi']; ?></td>

@@ -68,7 +68,6 @@
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <span class="subheading"></span>
                 <h2 class="mb-4">Nilai Penerima</h2>
-                <h3 class="mb-4"><?php echo $pecah['nama']; ?></h3>
                 <h4 class="mb-4"><?php echo $pecah['kelompok_tani']; ?></h4>
             </div>
         </div>

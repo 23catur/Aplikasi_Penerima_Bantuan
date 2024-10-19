@@ -131,7 +131,6 @@
                                 </a>
                             </div>
                             <div class="col-md-12 mt-4">
-                                <h3>Nama : <?php echo $pecah['ktp']; ?></h3>
                                 <h3>Kelompok Tani: <?php echo $pecah['kelompok_tani']; ?></h3>
                                 <h3>Bantuan Yang Diajukan : <?php echo $pecah['jenis_bantuan']; ?></h3>
 

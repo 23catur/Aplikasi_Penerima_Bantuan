@@ -89,7 +89,7 @@
                     <thead class="text-primary">
                       <th class="text-center">No</th>
                       <th class="text-center">Tanggal Perhitungan</th>
-                      <th class="text-center">Nama</th>
+                      <!-- <th class="text-center">Nama</th> -->
                       <th class="text-center">Kelompok Tani</th>
                       <th class="text-center">Nilai</th>
                       <th class="text-center">Status</th>
@@ -113,7 +113,6 @@
                           <tr>
                             <td><?php echo $nomor; ?></td>
                             <td><?php echo $pecah['tanggal']; ?></td>
-                            <td><?php echo $pecah['ktp']; ?></td>
                             <td><?php echo $pecah['kelompok_tani']; ?></td>
                             <td><?php echo $pecah['hasil']; ?></td>
                             <td><?php echo $status; ?></td>

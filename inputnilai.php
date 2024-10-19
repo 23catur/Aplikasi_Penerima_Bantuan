@@ -40,32 +40,32 @@ if (isset($_GET['id'])) {
                                     <h3 class="mb-12">Masukkan Data Kelompok Tani</h3>
                                     <form method="POST" enctype="multipart/form-data">
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <!-- <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="nama">Nama Sesuai KTP</label>
                                                     <input type="text" class="form-control" name="ktp" id="ktp" required placeholder="Nama Sesuai KTP">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="kelompok">Kelompok Tani</label>
                                                     <input type="text" class="form-control" name="kelompok" id="kelompok" required placeholder="Kelompok Tani">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="jenis_bantuan">Jenis Bantuan Yang Diajukan</label>
                                                     <input type="text" class="form-control" name="jenis_bantuan" id="jenis_bantuan" required placeholder="Jenis Bantuan Yang Diajukan">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="jenis_bantuan">Komoditi</label>
                                                     <input type="text" class="form-control" name="komoditi" id="komoditi" required placeholder="Komoditi Yang Diusahakan">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="a1">Terdaftar di SIMLUHTAN</label>
                                                     <select class="form-control" name="a1" id="a1" required>
                                                         <option value="" disabled selected>-- Pilih --</option>
@@ -75,19 +75,19 @@ if (isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="a2">Luas Lahan</label>
                                                     <select class="form-control" name="a4" id="a4" required>
                                                         <option value="" disabled selected>-- Pilih --</option>
                                                         <option value="1">&lt;Tidak Punya Lahan</option>
-                                                        <option value="2">&lt;2hk</option>
-                                                        <option value="3">2hk</option>
-                                                        <option value="4">&gt;2hk</option>
+                                                        <option value="2">&lt;2 hektar</option>
+                                                        <option value="3">2 hektar</option>
+                                                        <option value="4">&gt;2 hektar</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="a3">Riwayat Terima Bantuan</label>
                                                     <select class="form-control" name="a3" id="a3" required>
                                                         <option value="" disabled selected>-- Pilih --</option>
@@ -99,7 +99,7 @@ if (isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="a4">Sumber Air</label>
                                                     <select class="form-control" name="a6" id="a6" required>
                                                         <option value="" disabled selected>-- Pilih --</option>
@@ -110,7 +110,7 @@ if (isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="a5">Lokasi</label>
                                                     <select class="form-control" name="a5" id="a5" required>
                                                         <option value="" disabled selected>-- Pilih --</option>
@@ -121,13 +121,13 @@ if (isset($_GET['id'])) {
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <label class="label" for="proposal">Masukkan Proposal (PDF)</label>
                                                     <input type="file" class="form-control" name="proposal" id="proposal" accept=".pdf" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
+                                                <div class="form-group" style="color:maroon">
                                                     <input type="checkbox" name="keterangan" value="keterangan" required> Data yang sudah terisi tidak bisa diubah<br>
                                                 </div>
                                             </div>
@@ -148,7 +148,7 @@ if (isset($_GET['id'])) {
                                         if ($ambil->num_rows > 0) {
                                             echo "<div class='alert alert-info'>Anda sudah input nilai</div>";
                                         } else {
-                                            $ktp = $_POST['ktp'];
+                                            // $ktp = $_POST['ktp'];
                                             $kelompok = $_POST['kelompok'];
                                             $komoditi = $_POST['komoditi'];
                                             $jenis_bantuan = $_POST['jenis_bantuan'];
@@ -167,8 +167,8 @@ if (isset($_GET['id'])) {
                                             }
 
                                             if (move_uploaded_file($proposal_tmp, $proposal_folder)) {
-                                                $query = $koneksi->query("INSERT INTO nilai_kelompok(id_kelompok, ktp, kelompok_tani, komoditi, jenis_bantuan, a1, a6, a3, a4, a5, a2, proposal, status) 
-                          VALUES('$id_kelompok', '$ktp', '$kelompok', '$komoditi', '$jenis_bantuan', '$a1', '$a6', '$a3', '$a4', '$a5', 5, '$proposal', 'belum verifikasi')");
+                                                $query = $koneksi->query("INSERT INTO nilai_kelompok(id_kelompok, kelompok_tani, komoditi, jenis_bantuan, a1, a6, a3, a4, a5, a2, proposal, status) 
+                          VALUES('$id_kelompok', '$kelompok', '$komoditi', '$jenis_bantuan', '$a1', '$a6', '$a3', '$a4', '$a5', 5, '$proposal', 'belum verifikasi')");
 
                                                 if ($query) {
                                                     echo "<div class='alert alert-info'>Data Tersimpan</div>";
